@@ -1,0 +1,56 @@
+/* Variables CSS para facilitar el modo oscuro */
+:root {
+  --fondo: #f4f4f9;
+  --texto: #333;
+  --contenedor: rgb(255, 255, 255);
+  --borde: #ccc;
+}
+
+/* CLASE MÁGICA PARA EL MODO OSCURO */
+.dark-mode {
+  --fondo: #1e1e2f;
+  --texto: #f4f4f9;
+  --contenedor: #2a2a40;
+  --borde: #444;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--fondo);
+  color: var(--texto);
+  padding: 40px;
+  transition: all 0.3s ease; /* Animación suave al cambiar de modo */
+}
+
+.contenedor {
+  background-color: var(--contenedor);
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid var(--borde);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+input, button {
+  padding: 10px;
+  margin: 5px;
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid var(--borde);
+  padding: 10px;
+  text-align: center;
+}
+
+.btn-oscuro {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}

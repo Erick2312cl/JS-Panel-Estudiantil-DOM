@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel Estudiantil</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <button id="btnModoOscuro" class="btn-oscuro">🌙 Modo Oscuro</button>
+
+  <div class="contenedor">
+    <h1>Registro de Notas</h1>
+    
+    <form id="formNotas">
+      <input type="text" id="nombre" placeholder="Nombre">
+      <input type="text" id="apellido" placeholder="Apellido">
+      <input type="number" id="nota" placeholder="Nota (1-10)" min="1" max="10">
+      <button type="submit">Agregar Alumno</button>
+    </form>
+
+    <table id="tablaNotas">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Nota</th>
+          <th>Condición</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="cuerpoTabla"></tbody>
+    </table>
+  </div>
+</body>
+</html>
