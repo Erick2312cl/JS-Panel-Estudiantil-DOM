@@ -2,11 +2,47 @@
 const btnModoOscuro = document.getElementById("btnModoOscuro");
 const body = document.body;
 
+btnModoOscuro.addEventListener("click",function(){
+
+    body.classList.toggle("dark-mode");
+
+});
+
+
+
+
 const formNotas = document.getElementById("formNotas");
 const inputNombre = document.getElementById("nombre");
 const inputApellido = document.getElementById("apellido");
 const inputNota = document.getElementById("nota");
 const cuerpoTabla = document.getElementById("cuerpoTabla");
+const textoPromedio = document.getElementById("promedio");
+
+function actualizarPromedio (){
+
+    const cantFilas = cuerpoTabla.rows.length;
+
+    if (cantFilas === 0) {
+        textoPromedio.textContent = "Promedio: -";
+        return;
+    }
+
+    let sumaTotal = 0;
+
+    for (let index = 0; index < cantFilas; index++) {
+        const textoNota = cuerpoTabla.rows[index].cells[2].textContent;
+        
+       sumaTotal += parseInt (textoNota); 
+    }
+
+    const promedio = sumaTotal / cantFilas;
+    textoPromedio.textContent = "Promedio: " + promedio.toFixed(2);
+
+}
+
+
+
+
 
 formNotas.addEventListener("submit", function(evento){
 
@@ -45,6 +81,9 @@ formNotas.addEventListener("submit", function(evento){
     }
 
     if (hayErrores === false) {
+
+        
+
         console.log("datos enviados");
         const notaNumero = parseInt(valorNota);
 
@@ -74,15 +113,22 @@ formNotas.addEventListener("submit", function(evento){
             columnaCondicion.textContent = "Desaprobado";
         }
 
+        actualizarPromedio();
+
         btnEliminar.addEventListener("click", function(){
 
             nuevafila.remove();
+            actualizarPromedio();
 
         });
+    
+        formNotas.reset();
+        
 
 
     }
 
+   
 
 
 
