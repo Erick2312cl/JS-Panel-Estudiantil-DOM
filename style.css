@@ -54,3 +54,7 @@ th, td {
   right: 20px;
   cursor: pointer;
 }
+
+.borde-rojo {
+  border: 2px solid red !important;
+}
