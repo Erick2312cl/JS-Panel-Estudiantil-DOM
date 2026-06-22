@@ -50,15 +50,22 @@ formNotas.addEventListener("submit", function(evento){
 
         const nuevafila = cuerpoTabla.insertRow(-1);
 
+        const btnEliminar = document.createElement("button");
+        btnEliminar.textContent = "Eliminar";
+
         const columnaNombre = nuevafila.insertCell(0);
         const columnaApellido = nuevafila.insertCell(1);
         const columnaNota = nuevafila.insertCell(2);
         const columnaCondicion = nuevafila.insertCell(3);
         const columnaAcciones = nuevafila.insertCell(4);
 
+       
+
+
         columnaNombre.textContent = valorNombre;
         columnaApellido.textContent = valorApellido;
         columnaNota.textContent = notaNumero;
+        columnaAcciones.appendChild(btnEliminar);
 
         if (notaNumero >= 6) {
             columnaCondicion.textContent = "Aprobado";
@@ -66,6 +73,13 @@ formNotas.addEventListener("submit", function(evento){
         }else{
             columnaCondicion.textContent = "Desaprobado";
         }
+
+        btnEliminar.addEventListener("click", function(){
+
+            nuevafila.remove();
+
+        });
+
 
     }
 
